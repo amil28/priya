@@ -42,6 +42,7 @@ export interface Song {
   title: string;
   artist: string;
   cover: string;
+  audioUrl?: string; // Optional: URL to the audio file or preview
 }
 
 export interface MonthMemory {

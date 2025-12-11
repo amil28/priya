@@ -82,101 +82,224 @@ export const GIFTS: Gift[] = [
   { id: 'g3', name: 'Handwritten Letter', image: 'https://picsum.photos/400/400?random=12' },
 ];
 
+// 🎨 CUSTOMIZE THIS: Replace placeholder images and songs with Priya's actual photos and favorite music from 2024!
+// For images: Upload photos to your public folder or use image hosting service (one main photo per month)
+// For songs: Add the actual songs she listened to each month
 export const YEAR_IN_REVIEW: MonthMemory[] = [
   {
     id: 'jan',
     month: 'January',
-    images: ['https://picsum.photos/600/800?random=201', 'https://picsum.photos/400/400?random=202'],
-    songs: [{ title: 'Anti-Hero', artist: 'Taylor Swift', cover: 'https://picsum.photos/200/200?random=203' }],
-    description: 'New year, new goals. Started the gym (for 3 days).',
-    color: '#3b82f6' // Blue
+    images: [
+      'https://picsum.photos/600/800?random=201', // Replace with Priya's January photo
+      'https://picsum.photos/600/800?random=202'  // Second image (not used in display, kept for data structure)
+    ],
+    songs: [
+      { 
+        title: 'Anti-Hero',           // Replace with actual song
+        artist: 'Taylor Swift',       // Replace with actual artist
+        cover: 'https://picsum.photos/200/200?random=203', // Replace with album cover
+        audioUrl: '' // Add URL to MP3/audio file or Spotify preview URL
+      }
+    ],
+    description: 'New year, new goals. Started the gym (for 3 days).', // Customize this!
+    color: '#3b82f6' // Blue - Winter vibes
   },
   {
     id: 'feb',
     month: 'February',
-    images: ['https://picsum.photos/600/800?random=204', 'https://picsum.photos/400/400?random=205'],
-    songs: [{ title: 'Flowers', artist: 'Miley Cyrus', cover: 'https://picsum.photos/200/200?random=206' }],
+    images: [
+      'https://picsum.photos/600/800?random=204',
+      'https://picsum.photos/400/400?random=205'
+    ],
+    songs: [
+      { 
+        title: 'Flowers', 
+        artist: 'Miley Cyrus', 
+        cover: 'https://picsum.photos/200/200?random=206',
+        audioUrl: ''
+      }
+    ],
     description: 'Shortest month, longest feels. Valentine\'s drama.',
-    color: '#ec4899' // Pink
+    color: '#ec4899' // Pink - Valentine's
   },
   {
     id: 'mar',
     month: 'March',
-    images: ['https://picsum.photos/600/800?random=207', 'https://picsum.photos/400/400?random=208'],
-    songs: [{ title: 'Kill Bill', artist: 'SZA', cover: 'https://picsum.photos/200/200?random=209' }],
+    images: [
+      'https://picsum.photos/600/800?random=207',
+      'https://picsum.photos/400/400?random=208'
+    ],
+    songs: [
+      { 
+        title: 'Kill Bill', 
+        artist: 'SZA', 
+        cover: 'https://picsum.photos/200/200?random=209',
+        audioUrl: ''
+      }
+    ],
     description: 'Spring sprung. Allergies attacked.',
-    color: '#22c55e' // Green
+    color: '#22c55e' // Green - Spring
   },
   {
     id: 'apr',
     month: 'April',
-    images: ['https://picsum.photos/600/800?random=210', 'https://picsum.photos/400/400?random=211'],
-    songs: [{ title: 'As It Was', artist: 'Harry Styles', cover: 'https://picsum.photos/200/200?random=212' }],
+    images: [
+      'https://picsum.photos/600/800?random=210',
+      'https://picsum.photos/400/400?random=211'
+    ],
+    songs: [
+      { 
+        title: 'As It Was', 
+        artist: 'Harry Styles', 
+        cover: 'https://picsum.photos/200/200?random=212',
+        audioUrl: ''
+      }
+    ],
     description: 'April showers brought... more Netflix.',
     color: '#a855f7' // Purple
   },
   {
     id: 'may',
     month: 'May',
-    images: ['https://picsum.photos/600/800?random=213', 'https://picsum.photos/400/400?random=214'],
-    songs: [{ title: 'Calm Down', artist: 'Rema', cover: 'https://picsum.photos/200/200?random=215' }],
+    images: [
+      'https://picsum.photos/600/800?random=213',
+      'https://picsum.photos/400/400?random=214'
+    ],
+    songs: [
+      { 
+        title: 'Calm Down', 
+        artist: 'Rema', 
+        cover: 'https://picsum.photos/200/200?random=215',
+        audioUrl: ''
+      }
+    ],
     description: 'May the force be with you. Also, birthday season begins!',
-    color: '#eab308' // Yellow
+    color: '#eab308' // Yellow - Sunshine
   },
   {
     id: 'jun',
     month: 'June',
-    images: ['https://picsum.photos/600/800?random=216', 'https://picsum.photos/400/400?random=217'],
-    songs: [{ title: 'Cruel Summer', artist: 'Taylor Swift', cover: 'https://picsum.photos/200/200?random=218' }],
+    images: [
+      'https://picsum.photos/600/800?random=216',
+      'https://picsum.photos/600/800?random=217'
+    ],
+    songs: [
+      { 
+        title: 'Cruel Summer', 
+        artist: 'Taylor Swift', 
+        cover: 'https://picsum.photos/200/200?random=218',
+        audioUrl: ''
+      }
+    ],
     description: 'Summer vibes. Too hot to handle.',
-    color: '#f97316' // Orange
+    color: '#f97316' // Orange - Summer heat
   },
   {
     id: 'jul',
     month: 'July',
-    images: ['https://picsum.photos/600/800?random=219', 'https://picsum.photos/400/400?random=220'],
-    songs: [{ title: 'Vampire', artist: 'Olivia Rodrigo', cover: 'https://picsum.photos/200/200?random=221' }],
+    images: [
+      'https://picsum.photos/600/800?random=219',
+      'https://picsum.photos/600/800?random=220'
+    ],
+    songs: [
+      { 
+        title: 'Vampire', 
+        artist: 'Olivia Rodrigo', 
+        cover: 'https://picsum.photos/200/200?random=221',
+        audioUrl: ''
+      }
+    ],
     description: 'Mid-year crisis? Nah, just ice cream.',
     color: '#ef4444' // Red
   },
   {
     id: 'aug',
     month: 'August',
-    images: ['https://picsum.photos/600/800?random=222', 'https://picsum.photos/400/400?random=223'],
-    songs: [{ title: 'Paint The Town Red', artist: 'Doja Cat', cover: 'https://picsum.photos/200/200?random=224' }],
+    images: [
+      'https://picsum.photos/600/800?random=222',
+      'https://picsum.photos/600/800?random=223'
+    ],
+    songs: [
+      { 
+        title: 'Paint The Town Red', 
+        artist: 'Doja Cat', 
+        cover: 'https://picsum.photos/200/200?random=224',
+        audioUrl: ''
+      }
+    ],
     description: 'August slipped away into a moment in time.',
     color: '#14b8a6' // Teal
   },
   {
     id: 'sep',
     month: 'September',
-    images: ['https://picsum.photos/600/800?random=225', 'https://picsum.photos/400/400?random=226'],
-    songs: [{ title: 'Strangers', artist: 'Kenya Grace', cover: 'https://picsum.photos/200/200?random=227' }],
+    images: [
+      'https://picsum.photos/600/800?random=225',
+      'https://picsum.photos/600/800?random=226'
+    ],
+    songs: [
+      { 
+        title: 'Strangers', 
+        artist: 'Kenya Grace', 
+        cover: 'https://picsum.photos/200/200?random=227',
+        audioUrl: ''
+      }
+    ],
     description: 'Wake me up when September ends.',
     color: '#6366f1' // Indigo
   },
   {
     id: 'oct',
     month: 'October',
-    images: ['https://picsum.photos/600/800?random=228', 'https://picsum.photos/400/400?random=229'],
-    songs: [{ title: 'Greedy', artist: 'Tate McRae', cover: 'https://picsum.photos/200/200?random=230' }],
+    images: [
+      'https://picsum.photos/600/800?random=228',
+      'https://picsum.photos/600/800?random=229'
+    ],
+    songs: [
+      { 
+        title: 'Greedy', 
+        artist: 'Tate McRae', 
+        cover: 'https://picsum.photos/200/200?random=230',
+        audioUrl: ''
+      }
+    ],
     description: 'Spooky season. Pumpkin spice everything.',
-    color: '#f59e0b' // Amber
+    color: '#f59e0b' // Amber - Fall colors
   },
   {
     id: 'nov',
     month: 'November',
-    images: ['https://picsum.photos/600/800?random=231', 'https://picsum.photos/400/400?random=232'],
-    songs: [{ title: 'Is It Over Now?', artist: 'Taylor Swift', cover: 'https://picsum.photos/200/200?random=233' }],
+    images: [
+      'https://picsum.photos/600/800?random=231',
+      'https://picsum.photos/600/800?random=232'
+    ],
+    songs: [
+      { 
+        title: 'Is It Over Now?', 
+        artist: 'Taylor Swift', 
+        cover: 'https://picsum.photos/200/200?random=233',
+        audioUrl: ''
+      }
+    ],
     description: 'Sweet November. Sweater weather.',
     color: '#8b5cf6' // Violet
   },
   {
     id: 'dec',
     month: 'December',
-    images: ['https://picsum.photos/600/800?random=234', 'https://picsum.photos/400/400?random=235'],
-    songs: [{ title: 'Last Christmas', artist: 'Wham!', cover: 'https://picsum.photos/200/200?random=236' }],
+    images: [
+      'https://picsum.photos/600/800?random=234',
+      'https://picsum.photos/600/800?random=235'
+    ],
+    songs: [
+      { 
+        title: 'Last Christmas', 
+        artist: 'Wham!', 
+        cover: 'https://picsum.photos/200/200?random=236',
+        audioUrl: ''
+      }
+    ],
     description: 'Wrapping up the year. Best one yet.',
-    color: '#10b981' // Emerald
+    color: '#10b981' // Emerald - Holiday season
   },
 ];
