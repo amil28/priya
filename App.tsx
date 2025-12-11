@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import LockScreen from './components/LockScreen';
 import Hero from './components/Hero';
-import PersonalityPotion from './components/PersonalityPotion';
+import AboutMe from './components/AboutMe';
 import WallOfFame from './components/WallOfFame';
+import YearInReview from './components/YearInReview';
 
 function App() {
   const [isLocked, setIsLocked] = useState(true);
@@ -27,7 +28,8 @@ function App() {
             transition={{ duration: 1 }}
           >
             <Hero />
-            <PersonalityPotion />
+            <AboutMe />
+            <YearInReview />
             <WallOfFame />
 
             <footer className="bg-black text-stone-600 py-12 text-center font-sans text-sm tracking-widest uppercase">
