@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, Coffee, Book, Music, Plane } from 'lucide-react';
+import { Heart, Sparkles, Coffee, Book } from 'lucide-react';
 
 const AboutMe: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const AboutMe: React.FC = () => {
             </div>
           </div>
           <h2 className="font-serif text-5xl md:text-7xl tracking-tight mb-4">
-            About <span className="italic">Priya</span>
+            The <span className="italic">Priya</span> Effect
           </h2>
           <p className="text-sm uppercase tracking-[0.3em] text-stone-500">
             Twenty-Two & Thriving
@@ -46,36 +46,32 @@ const AboutMe: React.FC = () => {
           {/* The Letter */}
           <div className="prose prose-lg max-w-none">
             <p className="text-xl md:text-2xl leading-relaxed font-light text-stone-700">
-              To the girl who lights up every room she walks into—
+              Is it the smile? Is it the quiet innocence? Is it the way kindness just seems to spill out of you? 
+              No, wait... I think it's the <Highlight>eyes</Highlight>.
             </p>
             
             <p className="text-lg md:text-xl leading-relaxed text-stone-600 mt-6">
-              Twenty-two looks <Highlight>beautiful</Highlight> on you. Not because of the number, 
-              but because of the <Highlight>person</Highlight> you've become. You're the kind of rare 
-              that makes ordinary moments feel like <Highlight>magic</Highlight>.
+              There is a specific kind of <Highlight>sweetness</Highlight> in your eyes. It's there when you 
+              look at the world with that pure curiosity. It's there when you ask those questions that are so 
+              simply, wonderfully <Highlight>you</Highlight>. You don't just walk into a room; you become 
+              the <Highlight>light</Highlight> in it. You have this rare, beautiful gift: you love to speak, 
+              but you also love to <Highlight>listen</Highlight>. You make people feel seen. You heal them just 
+              by being near.
             </p>
 
             <p className="text-lg md:text-xl leading-relaxed text-stone-600 mt-6">
-              You have this way of being <Highlight>effortlessly brilliant</Highlight>—whether you're 
-              conquering your MBA, exploring new cities, or simply making the perfect cup of coffee. 
-              Your <Highlight>ambition</Highlight> inspires me, your <Highlight>kindness</Highlight> grounds 
-              me, and your laugh? It's my favorite sound in the world.
+              And then, there is the <Highlight>fire</Highlight>. The girl who attacks her MBA with the same 
+              intensity she attacks a spicy bowl of noodles. The girl who finds as much joy in a perfect Avocado 
+              Toast or a morning Matcha as she does in conquering the <Highlight>corporate world</Highlight>.
             </p>
 
             <p className="text-lg md:text-xl leading-relaxed text-stone-600 mt-6">
-              This year, I hope you chase every <Highlight>dream</Highlight> that sets your soul on fire. 
-              I hope you travel to places that take your breath away, read books that change your perspective, 
-              and dance like nobody's watching (even though I always am, because you're <Highlight>mesmerizing</Highlight>).
-            </p>
-
-            <p className="text-lg md:text-xl leading-relaxed text-stone-600 mt-6">
-              Here's to <Highlight>22</Highlight>—to new adventures, endless possibilities, 
-              and all the beautiful moments waiting for you. You deserve every bit of happiness 
-              this world has to offer, and I'm so lucky I get to witness your <Highlight>journey</Highlight>.
+              You are a mix of <Highlight>soft and strong</Highlight>, of ambition and comfort. You are home, 
+              and you are an <Highlight>adventure</Highlight>, all at once.
             </p>
 
             <p className="text-xl md:text-2xl leading-relaxed font-light text-stone-700 mt-8 italic">
-              Happy Birthday, Priya. Keep shining. ✨
+              Happy Birthday, Priya. To the girl who heals the world, one smile (and one case competition) at a time. ✨
             </p>
           </div>
         </motion.div>
@@ -105,22 +101,46 @@ const AboutMe: React.FC = () => {
 
           {/* Stats */}
           <div className="space-y-6">
-            <StatBar label="Caffeine Dependency" percentage={95} icon={<Coffee size={18} />} />
-            <StatBar label="Kindness & Empathy" percentage={100} icon={<Heart size={18} />} />
-            <StatBar label="Ambition & Drive" percentage={98} icon={<Sparkles size={18} />} />
-            <StatBar label="Bookworm Level" percentage={85} icon={<Book size={18} />} />
-            <StatBar label="Music Taste" percentage={100} icon={<Music size={18} />} />
-            <StatBar label="Wanderlust" percentage={92} icon={<Plane size={18} />} />
+            <StatBar 
+              label="Caffeine & Chlorophyll" 
+              percentage={100} 
+              icon={<Coffee size={18} />}
+              comment="Has successfully replaced blood with Matcha. Dedication to finding the perfect green drink is inspiring, bordering on obsessive."
+            />
+            <StatBar 
+              label="Culinary Arts (Consumption)" 
+              percentage={100} 
+              icon={<Sparkles size={18} />}
+              comment="Specializes in Avocado Toast appreciation and Bang Bang Noodle destruction. Can spot a good cafe from a mile away."
+            />
+            <StatBar 
+              label="Emotional Intelligence" 
+              percentage={100} 
+              icon={<Heart size={18} />}
+              comment="Off the charts."
+            />
+            <StatBar 
+              label="Corporate Domination" 
+              percentage={100} 
+              icon={<Book size={18} />}
+              comment="Crushing the MBA. Winning Apple Case Comps. Scaring competitors while wearing a great outfit. A true Girl Boss."
+            />
+            <StatBar 
+              label="Curiosity" 
+              percentage={98} 
+              icon={<Sparkles size={18} />}
+              comment="Never stops asking questions. Maintains a level of innocence and wonder that the world hasn't been able to take away."
+            />
           </div>
 
           {/* Report Card Footer */}
           <div className="border-t-2 border-stone-900 mt-8 pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-xs uppercase tracking-widest text-stone-500 mb-1">Teacher's Notes</p>
+                <p className="text-xs uppercase tracking-widest text-stone-500 mb-1">Final Verdict</p>
                 <p className="text-sm text-stone-700 italic max-w-md">
-                  "Exceptional performance across all categories. A true inspiration to everyone around her. 
-                  Keep being amazing! ⭐"
+                  "An exceptional student who has mastered the art of being both brilliantly ambitious and beautifully human. 
+                  Highly recommend for world domination. ⭐"
                 </p>
               </div>
               <div className="text-right hidden md:block">
@@ -173,21 +193,27 @@ interface StatBarProps {
   label: string;
   percentage: number;
   icon: React.ReactNode;
+  comment?: string;
 }
 
-const StatBar: React.FC<StatBarProps> = ({ label, percentage, icon }) => {
+const StatBar: React.FC<StatBarProps> = ({ label, percentage, icon, comment }) => {
   return (
-    <div className="group">
+    <div className="group border-b border-stone-200 pb-6">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <div className="text-stone-500 group-hover:text-stone-900 transition-colors">
             {icon}
           </div>
-          <span className="font-medium text-stone-900">{label}</span>
+          <span className="font-medium text-stone-900 uppercase text-sm tracking-wide">Subject: {label}</span>
         </div>
-        <span className="text-sm font-bold text-stone-900 tabular-nums">{percentage}%</span>
+        <div className="text-right">
+          <div className="text-xs uppercase tracking-widest text-stone-500 mb-1">Grade</div>
+          <div className="text-lg font-bold text-stone-900 tabular-nums">
+            {percentage === 100 ? 'A++' : percentage >= 98 ? 'A+' : 'A'}
+          </div>
+        </div>
       </div>
-      <div className="h-3 bg-stone-200 overflow-hidden relative">
+      <div className="h-2 bg-stone-200 overflow-hidden relative mb-3">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${percentage}%` }}
@@ -203,6 +229,11 @@ const StatBar: React.FC<StatBarProps> = ({ label, percentage, icon }) => {
           />
         </motion.div>
       </div>
+      {comment && (
+        <p className="text-xs text-stone-600 italic mt-2">
+          <span className="font-semibold not-italic">Teacher's Comment:</span> {comment}
+        </p>
+      )}
     </div>
   );
 };
