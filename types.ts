@@ -48,6 +48,7 @@ export interface Song {
 export interface MonthMemory {
   id: string;
   month: string;
+  monthTitle?: string; // Optional cute title for the month
   images: string[];
   songs: Song[];
   description: string;

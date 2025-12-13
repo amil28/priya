@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { YEAR_IN_REVIEW } from '../constants';
-import { Music, Calendar, Play, Pause } from 'lucide-react';
+import { Music, Calendar } from 'lucide-react';
 
 const YearInReview: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -36,14 +36,14 @@ const YearInReview: React.FC = () => {
               className="z-10 text-center"
             >
               <h2 className="font-serif text-6xl md:text-9xl tracking-[0.2em] mb-6 uppercase text-white">
-                2024
+                2025
               </h2>
               <p className="font-sans text-sm md:text-base text-stone-400 tracking-[0.3em] uppercase mb-4">
-                A Year in Moments
+                Special Edition
               </p>
               <div className="flex items-center justify-center gap-2 text-stone-500 text-xs">
                 <Calendar size={16} />
-                <span>Priya's Journey</span>
+                <span>Starring Priya</span>
               </div>
             </motion.div>
           </div>
@@ -117,9 +117,6 @@ interface MonthPanelProps {
 }
 
 const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, totalMonths }) => {
-  const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
   // Adjust for intro panel (+1)
   const adjustedIndex = index + 1;
   const start = adjustedIndex / totalMonths;
@@ -130,43 +127,6 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
   const scale = useTransform(scrollProgress, [start - 0.03, start, end, end + 0.03], [0.96, 1, 1, 0.96]);
 
   const isEven = index % 2 === 0;
-
-  const handlePlayPause = (song: typeof month.songs[0]) => {
-    if (!song.audioUrl) {
-      // If no audio URL, you could open Spotify/YouTube here
-      alert(`🎵 "${song.title}" by ${song.artist}\n\nAdd an audioUrl to the song in constants.ts to enable playback!`);
-      return;
-    }
-
-    if (currentlyPlaying === song.title) {
-      // Pause current song
-      audioRef.current?.pause();
-      setCurrentlyPlaying(null);
-    } else {
-      // Play new song
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-      audioRef.current = new Audio(song.audioUrl);
-      audioRef.current.play();
-      setCurrentlyPlaying(song.title);
-      
-      // Reset when song ends
-      audioRef.current.onended = () => {
-        setCurrentlyPlaying(null);
-      };
-    }
-  };
-
-  // Cleanup audio when component unmounts
-  React.useEffect(() => {
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
 
   return (
     <motion.div 
@@ -195,7 +155,7 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 opacity-60 z-10 pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent opacity-40 z-10 pointer-events-none" />
               
-              {/* The main image */}
+              {/* The main image - only shows first image */}
               <img 
                 src={month.images[0]} 
                 alt={`${month.month}`}
@@ -225,7 +185,12 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
               <h3 className="font-serif text-6xl md:text-8xl tracking-[0.15em] uppercase mb-6 text-white leading-none">
                 {month.month}
               </h3>
-              <p className="font-sans text-stone-400 text-lg md:text-xl leading-relaxed">
+              {month.monthTitle && (
+                <p className="font-sans text-base md:text-lg text-stone-300 italic mb-6">
+                  {month.monthTitle}
+                </p>
+              )}
+              <p className="font-sans text-stone-400 text-base md:text-lg leading-relaxed">
                 {month.description}
               </p>
             </div>
@@ -237,69 +202,40 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
                 <span className="text-[11px] uppercase tracking-[0.3em]">On Repeat</span>
               </div>
               
-              {month.songs.map((song, i) => {
-                const isPlaying = currentlyPlaying === song.title;
-                return (
-                  <div
-                    key={i}
-                    onClick={() => handlePlayPause(song)}
-                    className="flex items-center gap-6 group cursor-pointer hover:bg-stone-800/30 p-3 -m-3 transition-colors rounded-sm"
-                  >
-                    <div className="relative flex-shrink-0">
-                      <img 
-                        src={song.cover} 
-                        alt={song.title}
-                        className="w-20 h-20 md:w-24 md:h-24 object-cover shadow-lg transition-all duration-500"
-                        style={{ 
-                          filter: isPlaying ? 'grayscale(0%) brightness(1)' : 'grayscale(100%) brightness(0.8)',
-                        }}
-                      />
-                      <div 
-                        className={`absolute inset-0 transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-                        style={{ 
-                          backgroundImage: `url(${song.cover})`,
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center'
-                        }}
-                      />
-                      <div 
-                        className={`absolute inset-0 border-2 transition-colors ${isPlaying ? 'border-white' : 'border-transparent group-hover:border-white'}`}
-                      />
-                      
-                      {/* Play/Pause Button Overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                        {isPlaying ? (
-                          <Pause size={24} className="text-white" fill="white" />
-                        ) : (
-                          <Play size={24} className="text-white" fill="white" />
-                        )}
-                      </div>
-                      
-                      {/* Playing indicator */}
-                      {isPlaying && (
-                        <motion.div 
-                          className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-white"
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ repeat: Infinity, duration: 1 }}
-                        />
-                      )}
+              {month.songs.map((song, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-6 group transition-all duration-300"
+                >
+                  <div className="relative flex-shrink-0">
+                    <img 
+                      src={song.cover} 
+                      alt={song.title}
+                      className="w-20 h-20 md:w-24 md:h-24 object-cover shadow-lg transition-all duration-500"
+                      style={{ 
+                        filter: 'grayscale(100%) brightness(0.8)',
+                      }}
+                    />
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{ 
+                        backgroundImage: `url(${song.cover})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                      }}
+                    />
+                    <div className="absolute inset-0 border-2 border-transparent group-hover:border-white transition-colors" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-sans text-base md:text-lg font-medium text-white mb-1 transition-colors">
+                      {song.title}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className={`font-sans text-base md:text-lg font-medium mb-1 transition-colors ${isPlaying ? 'text-white' : 'text-white group-hover:text-white'}`}>
-                        {song.title}
-                      </div>
-                      <div className={`text-sm transition-colors ${isPlaying ? 'text-stone-400' : 'text-stone-500 group-hover:text-stone-400'}`}>
-                        {song.artist}
-                      </div>
-                    </div>
-                    
-                    {/* Status text */}
-                    <div className="text-xs uppercase tracking-widest text-stone-600 group-hover:text-stone-500 transition-colors">
-                      {isPlaying ? 'Playing' : 'Play'}
+                    <div className="text-sm text-stone-500 transition-colors">
+                      {song.artist}
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
 
             {/* Decorative Element */}
