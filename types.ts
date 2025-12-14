@@ -41,7 +41,7 @@ export interface Gift {
 export interface Song {
   title: string;
   artist: string;
-  cover: string;
+  cover?: string; // Optional: album cover image
   audioUrl?: string; // Optional: URL to the audio file or preview
 }
 

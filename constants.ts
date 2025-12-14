@@ -60,12 +60,16 @@ export const COUPON_REWARD: Coupon = {
 };
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'Sarah', message: 'Happy Birthday! You are the light of our group. Never stop shining!' },
-  { id: '2', name: 'Mike', message: 'To the smartest person I know. Have a blast and eat all the cake!' },
-  { id: '3', name: 'Anjali', message: 'Can\'t wait to celebrate! Love you loads, bestie.' },
-  { id: '4', name: 'Mom', message: 'Proud of you always, my dear. You make every day brighter.' },
-  { id: '5', name: 'Rahul', message: 'Another year wiser, another year cooler. HBD!' },
-  { id: '6', name: 'Sneha', message: 'Keep slaying queen! Miss you tons.' },
+  { 
+    id: '1', 
+    name: 'Pranet', 
+    message: 'Happy Birthday to my forest fire, the one who can also extinguish the fires in my life.\n\nTo the person I\'m most proud of, out there living the dream, always remember how inspiring you are to me.\n\nThank you for always being there, no matter the distance, no matter the time. I truly hope the very best finds you at every step of your journey.\n\nThis year, honestly… Delhi doesn\'t feel like Delhi without you. Waiting for you to come back already.\n\nMissing our gedis, our nightstays, our gossip seshs, and just everything that makes life feel lighter with you around.\n\nnever forget you\'re deeply loved, endlessly missed, and always my safest place.\n\nMay this year bring you more growth, more happiness, and everything your beautiful soul deserves.\n\nAlways cheering for you, always here. 💫' 
+  },
+  { 
+    id: '2', 
+    name: 'Aanya', 
+    message: 'happy birthday to my, a decade long best friend. happy & hard to believe how I\'ve kept you close to me for this long 😋\n\nthat counts your annoying self, your matcha addiction phase, your masti sooj rahi hai phase, your need to change your hair colour phase and everything in between and all this is because you\'re full of life.\n\nthank you for always sticking around with me, for being my constant in a world that keeps changing.\n\nseeing you grow gives me immense pride to call you my best friend. I love you more than words can ever explain, so I\'ll stop here 🤍' 
+  },
 ];
 
 export const TAROT_CARDS: TarotCard[] = [
@@ -96,10 +100,9 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Yellow',           // Replace with actual song
-        artist: 'Coldplay',       // Replace with actual artist
-        cover: 'https://picsum.photos/200/200?random=203', // Replace with album cover
-        audioUrl: '' // Add URL to MP3/audio file or Spotify preview URL
+        title: 'Yellow',
+        artist: 'Coldplay',
+        audioUrl: ''
       }
     ],
     description: 'The year kicked off under a sky full of stars in Mumbai, singing along to Coldplay with the world at our feet. And while the doors to ISB didn’t open this time, Priya didn’t stop. She took the rejection not as a "no," but as a "watch me." High fashion, higher spirits. The main character energy started right here..', // Customize this!
@@ -115,9 +118,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Flowers', 
-        artist: 'Miley Cyrus', 
-        cover: 'https://picsum.photos/200/200?random=206',
+        title: 'Boss Bitch', 
+        artist: 'Doja Cat', 
         audioUrl: ''
       }
     ],
@@ -134,9 +136,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Kill Bill', 
-        artist: 'SZA', 
-        cover: 'https://picsum.photos/200/200?random=209',
+        title: 'Holiday', 
+        artist: 'Green Day', 
         audioUrl: ''
       }
     ],
@@ -153,9 +154,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'As It Was', 
-        artist: 'Harry Styles', 
-        cover: 'https://picsum.photos/200/200?random=212',
+        title: 'Unwritten', 
+        artist: 'Natasha Bedingfield', 
         audioUrl: ''
       }
     ],
@@ -172,9 +172,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Calm Down', 
-        artist: 'Rema', 
-        cover: 'https://picsum.photos/200/200?random=215',
+        title: 'Nice For What', 
+        artist: 'Drake', 
         audioUrl: ''
       }
     ],
@@ -191,9 +190,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Cruel Summer', 
-        artist: 'Taylor Swift', 
-        cover: 'https://picsum.photos/200/200?random=218',
+        title: 'Walking On A Dream', 
+        artist: 'Empire of the Sun', 
         audioUrl: ''
       }
     ],
@@ -210,9 +208,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Vampire', 
-        artist: 'Olivia Rodrigo', 
-        cover: 'https://picsum.photos/200/200?random=221',
+        title: 'Successful', 
+        artist: 'Ariana Grande', 
         audioUrl: ''
       }
     ],
@@ -229,9 +226,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Paint The Town Red', 
-        artist: 'Doja Cat', 
-        cover: 'https://picsum.photos/200/200?random=224',
+        title: 'Love On Top', 
+        artist: 'Beyoncé', 
         audioUrl: ''
       }
     ],
@@ -248,9 +244,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Strangers', 
-        artist: 'Kenya Grace', 
-        cover: 'https://picsum.photos/200/200?random=227',
+        title: 'Espresso', 
+        artist: 'Sabrina Carpenter', 
         audioUrl: ''
       }
     ],
@@ -268,9 +263,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Greedy', 
-        artist: 'Tate McRae', 
-        cover: 'https://picsum.photos/200/200?random=230',
+        title: 'Chogada', 
+        artist: 'Darshan Raval', 
         audioUrl: ''
       }
     ],
@@ -287,9 +281,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Is It Over Now?', 
-        artist: 'Taylor Swift', 
-        cover: 'https://picsum.photos/200/200?random=233',
+        title: 'Softly', 
+        artist: 'Karan Aujla', 
         audioUrl: ''
       }
     ],
@@ -306,9 +299,8 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     ],
     songs: [
       { 
-        title: 'Last Christmas', 
-        artist: 'Wham!', 
-        cover: 'https://picsum.photos/200/200?random=236',
+        title: 'Dancing Queen', 
+        artist: 'ABBA', 
         audioUrl: ''
       }
     ],
