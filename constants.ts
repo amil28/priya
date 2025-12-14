@@ -167,7 +167,6 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     month: 'May',
     monthTitle: 'The Wellness & Goodbyes Edit',
     images: [
-      '/months/may1.JPG',
       '/months/may1.JPG'
     ],
     songs: [
@@ -258,8 +257,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
     monthTitle: 'The Festive & Exclusive Edit',
     images: [
       '/months/oct1.jpg',
-      '/months/oct2.jpg',
-      '/months/oct3.jpg'
+      '/months/oct2.jpg'
     ],
     songs: [
       { 

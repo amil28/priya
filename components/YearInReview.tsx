@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { YEAR_IN_REVIEW } from '../constants';
-import { Music, Calendar } from 'lucide-react';
+import { Music, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const YearInReview: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -117,6 +117,9 @@ interface MonthPanelProps {
 }
 
 const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, totalMonths }) => {
+  // State for image carousel
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
   // Adjust for intro panel (+1)
   const adjustedIndex = index + 1;
   const start = adjustedIndex / totalMonths;
@@ -127,6 +130,15 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
   const scale = useTransform(scrollProgress, [start - 0.03, start, end, end + 0.03], [0.96, 1, 1, 0.96]);
 
   const isEven = index % 2 === 0;
+
+  // Image navigation handlers
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % month.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + month.images.length) % month.images.length);
+  };
 
   return (
     <motion.div 
@@ -144,7 +156,7 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
       <div className="w-full max-w-7xl h-full flex items-center relative z-10">
         <div className={`grid md:grid-cols-2 gap-8 md:gap-16 w-full items-center ${isEven ? '' : 'md:grid-flow-dense'}`}>
           
-          {/* Magazine-Style Single Photo */}
+          {/* Magazine-Style Photo with Navigation */}
           <div className={`relative h-[500px] md:h-[650px] ${isEven ? '' : 'md:col-start-2'}`}>
             <motion.div 
               className="w-full h-full overflow-hidden shadow-2xl relative group"
@@ -155,21 +167,56 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 opacity-60 z-10 pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent opacity-40 z-10 pointer-events-none" />
               
-              {/* The main image - only shows first image */}
-              <img 
-                src={month.images[0]} 
-                alt={`${month.month}`}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                style={{ 
-                  filter: 'brightness(0.85) contrast(1.15) saturate(0.9)',
-                }}
-              />
+              {/* Image with animation */}
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={currentImageIndex}
+                  src={month.images[currentImageIndex]} 
+                  alt={`${month.month} ${currentImageIndex + 1}`}
+                  className="w-full h-full object-cover"
+                  style={{ 
+                    filter: 'brightness(0.85) contrast(1.15) saturate(0.9)',
+                  }}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </AnimatePresence>
               
               {/* Subtle border for magazine feel */}
               <div className="absolute inset-0 border-2 border-black/20 z-20 pointer-events-none" />
               
               {/* Vignette effect */}
               <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.5)] z-10 pointer-events-none" />
+              
+              {/* Navigation Arrows - Only show if there are multiple images */}
+              {month.images.length > 1 && (
+                <>
+                  {/* Left Arrow */}
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  
+                  {/* Right Arrow */}
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                  
+                  {/* Image Counter */}
+                  <div className="absolute bottom-4 right-4 z-30 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-sans backdrop-blur-sm">
+                    {currentImageIndex + 1} / {month.images.length}
+                  </div>
+                </>
+              )}
             </motion.div>
           </div>
 
