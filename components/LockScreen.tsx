@@ -14,19 +14,74 @@ interface TriviaQuestion {
 
 const TRIVIA_QUESTIONS: TriviaQuestion[] = [
   {
-    question: "What is Priya's favorite coffee order?",
-    options: ["Cappuccino", "Latte", "Americano", "Mocha"],
-    correctAnswer: 1 // Index of correct answer
-  },
-  {
-    question: "Which city does Priya dream of visiting?",
-    options: ["Paris", "Tokyo", "New York", "London"],
-    correctAnswer: 0
-  },
-  {
-    question: "What's Priya's go-to comfort food?",
-    options: ["Pizza", "Pasta", "Tiramisu", "Sushi"],
+    question: "The Geography Test: We had wine at a random place with the most unhelpful name in history. What was it called?",
+    options: ["Here and there", "Everywhere", "Somewhere else", "Somewhere here"],
     correctAnswer: 2
+  },
+  {
+    question: "The Khan Market Sweet Tooth: Khan Market sugar rush. Where do we actually go for the best dessert?",
+    options: ["The Big Chill Cakery", "L'Opéra", "Bloom", "Ladurée"],
+    correctAnswer: 2
+  },
+  {
+    question: "The Cuisine Loyalty: If Priya had to eat one cuisine for the rest of her life, what is she picking?",
+    options: ["North Indian", "Asian", "Italian", "Mexican"],
+    correctAnswer: 2
+  },
+  {
+    question: "Ashok Vihar Chronicles: We are in Ashok Vihar. We need Pasta. Where are we going?",
+    options: ["Diggin", "Massons", "Rico's", "The Good Food Co."],
+    correctAnswer: 1
+  },
+  {
+    question: "The Catchphrase: Which one of these sentences does Priya say the most?",
+    options: ["Mera ek dilemma hai", "Challo kuch intelligent baatein karte hai", "Pata hai kya hua", "True true"],
+    correctAnswer: 2
+  },
+  {
+    question: "Heights & Harmonies: She was scared at the top of the Ferris Wheel at the Mela. What song did we sing to distract her?",
+    options: ["Perfect", "Love Story", "Despacito", "Baby"],
+    correctAnswer: 2
+  },
+  {
+    question: "The Specific Date: On September 25th, 2024, after the date, what specific dessert did she eat?",
+    options: ["Cheesecake at Bastian", "Tiramisu at Mag St.", "Gelato at Coppetto", "Macarons at Ladurée"],
+    correctAnswer: 3
+  },
+  {
+    question: "The Big Chill Ritual: What does Priya order every single time we go to Big Chill for a beverage?",
+    options: ["Lemon Iced Tea", "Peach Iced Tea", "Oreo Shake", "Diet Coke"],
+    correctAnswer: 1
+  },
+  {
+    question: "The 2 AM Vibe: It's 2 AM in Bombay. The party is over. Where does she want to drag everyone?",
+    options: ["Marine Drive", "Juhu Beach", "Bandstand", "Worli Sea Face"],
+    correctAnswer: 2
+  },
+  {
+    question: "History Class: On what exact date did Priya come to Amil's college for the first time?",
+    options: ["14th Feb 2024", "24th Jan 2024", "1st March 2024", "24th Feb 2024"],
+    correctAnswer: 3
+  },
+  {
+    question: "The Spice Levels: What is Priya's favorite topping for literally everything?",
+    options: ["Oregano", "Chilli Oil", "Ketchup", "Peri Peri Masala"],
+    correctAnswer: 1
+  },
+  {
+    question: "The Beverage of the Year: What is Priya's official Beverage of the Year 2025?",
+    options: ["Iced Coffee", "Boba Tea", "Matcha", "Diet Coke"],
+    correctAnswer: 2
+  },
+  {
+    question: "The True Fear: What is Priya actually the most afraid of?",
+    options: ["Failing an exam", "Amil's Hygiene", "Spiders", "Aarav's Sleep Schedule"],
+    correctAnswer: 3
+  },
+  {
+    question: "Fruit of the Year: What was Priya's 'Fruit of the Year'?",
+    options: ["Mango", "Avocado", "Strawberry", "Blueberry"],
+    correctAnswer: 1
   }
 ];
 
@@ -37,6 +92,7 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
   const [error, setError] = useState(false);
   const [showTrivia, setShowTrivia] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [showDevSkip, setShowDevSkip] = useState(true); // Dev mode skip button
 
   useEffect(() => {
     // Target Date: Dec 17, 2025
@@ -84,6 +140,11 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
         setSelectedAnswer(null);
       }, 1000);
     }
+  };
+
+  const handleDevSkip = () => {
+    // Dev mode: Skip all questions
+    onUnlock();
   };
 
   // Before Dec 17, 2025 - Show countdown
@@ -247,6 +308,18 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
             />
           ))}
         </div>
+
+        {/* Dev Skip Button - Remove this before production! */}
+        {showDevSkip && (
+          <motion.button
+            onClick={handleDevSkip}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-8 px-6 py-2 bg-yellow-500/20 border border-yellow-500/50 text-yellow-400 text-xs uppercase tracking-widest hover:bg-yellow-500/30 transition-all"
+          >
+            🚀 Dev Skip (Remove Before Launch)
+          </motion.button>
+        )}
       </motion.div>
     </div>
   );
