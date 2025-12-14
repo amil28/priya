@@ -203,18 +203,33 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
               </div>
               
               {month.songs.map((song, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 group transition-all duration-300"
-                >
-                  <div className="flex-1 min-w-0">
-                    <div className="font-sans text-base md:text-lg font-medium text-white mb-1 transition-colors">
-                      {song.title}
+                <div key={i} className="space-y-4">
+                  {/* Spotify Player - Only shows if audioUrl is provided */}
+                  {song.audioUrl ? (
+                    <div>
+                      <iframe 
+                        src={song.audioUrl}
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy"
+                        className="rounded-lg"
+                      />
                     </div>
-                    <div className="text-sm text-stone-500 transition-colors">
-                      {song.artist}
+                  ) : (
+                    // Fallback: Show title and artist if no embed available
+                    <div className="flex items-center gap-4 group transition-all duration-300">
+                      <div className="flex-1 min-w-0">
+                        <div className="font-sans text-base md:text-lg font-medium text-white mb-1 transition-colors">
+                          {song.title}
+                        </div>
+                        <div className="text-sm text-stone-500 transition-colors">
+                          {song.artist}
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               ))}
             </div>
