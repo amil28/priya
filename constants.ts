@@ -102,7 +102,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Yellow',
         artist: 'Coldplay',
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/3AJwUDP919kvQ9QcozQPxg?utm_source=generator'
       }
     ],
     description: 'The year kicked off under a sky full of stars in Mumbai, singing along to Coldplay with the world at our feet. And while the doors to ISB didn’t open this time, Priya didn’t stop. She took the rejection not as a "no," but as a "watch me." High fashion, higher spirits. The main character energy started right here..', // Customize this!
@@ -120,7 +120,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Boss Bitch', 
         artist: 'Doja Cat', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/72TFWvU3wUYdUuxejTTIzt?utm_source=generator'
       }
     ],
     description: 'February was a month of debuts. Priya entered her "Corporate Baddie" era, swapping the home office for the skyline of Bombay on her first official PwC trip. She meant business. Then, she swapped the blazer for running shoes to tackle her first marathon. Was she fast? Absolutely not. Did she arguably look like she was regretting it at Kilometer 5? Maybe. But she finished what she started—even if her running pace was more "leisurely stroll" than "Olympic gold."',
@@ -138,7 +138,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Holiday', 
         artist: 'Green Day', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/6ORqU0bHbVCRjXm9AjyHyZ?utm_source=generator'
       }
     ],
     description: 'If February was about running outside, March was about marathons on the couch. We went from the Lollapalooza crowds—where she was a supportive Green Day trooper—straight into a hardcore Marvel movie binge. But the real headline? The "Blueberry Smoothie Phase." She was absolutely obsessed with them; I was absolutely convinced they didn\'t taste good. But she drank them with conviction. Between saving the universe on screen, sipping questionable purple drinks, and keeping our daily Wordle streak alive, March was peak cozy-girl energy.',
@@ -156,7 +156,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Unwritten', 
         artist: 'Natasha Bedingfield', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/3U5JVgI2x4rDyHGObzJfNf?utm_source=generator'
       }
     ],
     description: 'In April, Priya decided to make some lasting impressions. First, she upgraded her beverage game, ditching the questionable purple smoothies for a full-blown "Matcha Fever." She didn\'t just drink it; she made it a lifestyle. But the real headline? She got inked. Her first tattoo ever. She walked in nervous and walked out with permanent art (and major street cred). Balanced out by a wholesome family get-together, it was the month she officially entered her "Cool Girl" era.',
@@ -174,7 +174,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Nice For What', 
         artist: 'Drake', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/5mCPDVBb16L4XQwDdbRUpz?utm_source=generator'
       }
     ],
     description: 'May was a month of massive adjustments, handled with grace (and greens). Priya entered her "Clean Girl Aesthetic" era—avocado toasts, salads, and a sudden commitment to health. But the real workout was emotional. As her boyfriend graduated and moved to Bangalore, the LDR chapter began. She supported him like a rockstar, helped pack the boxes and handled the goodbye with total grace, proving that she can support a dream while furiously chasing her own.',
@@ -192,7 +192,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Walking On A Dream', 
         artist: 'Empire of the Sun', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/5r5cp9IpziiIsR6b93vcnQ?utm_source=generator'
       }
     ],
     description: 'The Headline: She got into IIM Mumbai. Stop the presses. This was the moment. The dream she had been manifesting for years finally became a reality. After the plot twists of January, June was the ultimate redemption arc. She didn\'t just get in; she kicked the door down. The acceptance letter wasn\'t just paper; it was proof. She was ready to trade her comfort zone for the campus, armed with ambition and a "watch me do this" attitude. The biggest flex of the year.',
@@ -210,7 +210,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Successful', 
         artist: 'Ariana Grande', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/6kTwzV93qpcovlRPmBOXmn?utm_source=generator'
       }
     ],
     description: 'July was a cinematic montage. The MBA life began, and it was a rollercoaster. There were tears (saying bye to mom), there were fears (hostel life), and there was the tragedy of Mess Food (0/5 stars, would not recommend). But Priya? She thrived. She found her tribe, met amazing friends, and realized she was literally made for this. The Power Move: Landing a Day Zero Summer Internship at Godrej. While others were figuring out the syllabus, she was securing the bag. Smart, capable, and unstoppable. Godrej never stood a chance.',
@@ -228,7 +228,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Love On Top', 
         artist: 'Beyoncé', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/1z6WtY7X4HQJvzxC4UgkSf?utm_source=generator'
       }
     ],
     description: 'August was the "Afterparty" to the chaos of July. She came home for Rakhi, recharged, and decided one tattoo wasn\'t enough—so she got her second one. Because why not? But the main event was her masterclass in romance. She pulled off the ultimate surprise, flying to Bangalore for her boyfriend\'s birthday. She showed up at his door like a special delivery, proving that even with an MBA schedule, she’s the CEO of Making People Feel Special.',
@@ -246,7 +246,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Espresso', 
         artist: 'Sabrina Carpenter', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/2qSkIjg1o9h3YT9RAgYN75?utm_source=generator'
       }
     ],
     description: 'The Vibe: Work hard, slurp noodles harder. Priya was in full "Academic Weapon" mode, becoming a finalist in the Mondelez Case Competition. Brains? Check. But when I visited Bombay, the itinerary shifted from case studies to cravings. We toured the city through Ramen bowls, artisan coffee, and pitchers of beer. September proved she can pitch a winning strategy in the boardroom and finish a spicy ramen bowl in record time. Balance.',
@@ -265,7 +265,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Chogada', 
         artist: 'Darshan Raval', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/4ymPEyiXabTe1NO8q8EFxG?utm_source=generator'
       }
     ],
     description: 'October was about exclusivity. She got inducted into the Alum Comm—the most prestigious club on campus. Basically, the VIP section of IIM. Then came Diwali, and she served looks. We’re talking best-dressed lists, swirling lehengas, and Dandiya nights where she danced like nobody was watching (but everyone was). We even managed to relive our classic Khan Market date in Delhi. High fashion, high status, high spirits.',
@@ -283,7 +283,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Softly', 
         artist: 'Karan Aujla', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/0cYohCh24y1aMjJmcS9RBl?utm_source=generator'
       }
     ],
     description: 'November was for the culture. The food tour continued with the famous Bang Bang noodles and hunting down the perfect Basque Cheesecake (because priorities). But the energy peaked at Rolling Loud. The Soundtrack: Karan Aujla. She wasn\'t just in the crowd; she was the main character.',
@@ -301,7 +301,7 @@ export const YEAR_IN_REVIEW: MonthMemory[] = [
       { 
         title: 'Dancing Queen', 
         artist: 'ABBA', 
-        audioUrl: ''
+        audioUrl: 'https://open.spotify.com/embed/track/0GjEhVFGZW8afUYGChu3Rr?utm_source=generator'
       }
     ],
     description: 'If 2025 was a game, Priya cleared the final level in December. The Win: She crushed the Apple Case Competition. The Prize: An iPad Pro. (Note: She is now technically a tech influencer. Autographs available upon request). The Party: A huge birthday bash to celebrate the icon herself. The Legacy: She organized "Samsmaran," the biggest fest in college. She ended the year holding a trophy in one hand, a slice of cake in the other, and the knowledge that she absolutely owned the last 12 months.',
