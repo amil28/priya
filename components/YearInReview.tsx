@@ -205,27 +205,8 @@ const MonthPanel: React.FC<MonthPanelProps> = ({ month, index, scrollProgress, t
               {month.songs.map((song, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-6 group transition-all duration-300"
+                  className="flex items-center gap-4 group transition-all duration-300"
                 >
-                  <div className="relative flex-shrink-0">
-                    <img 
-                      src={song.cover} 
-                      alt={song.title}
-                      className="w-20 h-20 md:w-24 md:h-24 object-cover shadow-lg transition-all duration-500"
-                      style={{ 
-                        filter: 'grayscale(100%) brightness(0.8)',
-                      }}
-                    />
-                    <div 
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      style={{ 
-                        backgroundImage: `url(${song.cover})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    />
-                    <div className="absolute inset-0 border-2 border-transparent group-hover:border-white transition-colors" />
-                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-sans text-base md:text-lg font-medium text-white mb-1 transition-colors">
                       {song.title}
