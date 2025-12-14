@@ -87,12 +87,11 @@ const TRIVIA_QUESTIONS: TriviaQuestion[] = [
 
 const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [showTrivia, setShowTrivia] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [error, setError] = useState(false);
-  const [showTrivia, setShowTrivia] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [showDevSkip, setShowDevSkip] = useState(true); // Dev mode skip button
 
   useEffect(() => {
     // Target Date: Dec 17, 2025
@@ -140,11 +139,6 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
         setSelectedAnswer(null);
       }, 1000);
     }
-  };
-
-  const handleDevSkip = () => {
-    // Dev mode: Skip all questions
-    onUnlock();
   };
 
   // Before Dec 17, 2025 - Show countdown
@@ -212,23 +206,75 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
               </div>
             </div>
           </motion.div>
-
-          {/* Temporary bypass button - REMOVE BEFORE LAUNCH */}
-          <motion.button
-            onClick={() => setIsUnlocked(true)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="mt-8 px-6 py-2 border border-white/20 hover:border-rose-300/50 transition-all text-xs tracking-widest uppercase"
-          >
-            Skip to Trivia (Remove this later)
-          </motion.button>
         </motion.div>
       </div>
     );
   }
 
-  // After Dec 17, 2025 - Show trivia
+  // After Dec 17, 2025 but before starting trivia - Show welcome screen with start button
+  if (!showTrivia) {
+    return (
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white overflow-hidden">
+        {/* Vogue-style animated background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-rose-500 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="text-center relative z-10 px-6 max-w-2xl"
+        >
+          {/* Welcome message */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="mb-12"
+          >
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
+              THE MOMENT HAS ARRIVED
+            </h1>
+            <div className="h-px w-32 bg-white/30 mx-auto mb-8" />
+            <p className="font-sans text-lg md:text-xl text-stone-300 leading-relaxed mb-4 tracking-wide">
+              Welcome to the Birthday Edition
+            </p>
+            <p className="font-sans text-sm md:text-base text-stone-400 leading-relaxed tracking-wide">
+              But first, prove you know the birthday queen.
+              <br />
+              Answer correctly to unlock the full experience.
+            </p>
+          </motion.div>
+
+          {/* Start button - Elegant magazine style */}
+          <motion.button
+            onClick={() => setShowTrivia(true)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-12 py-4 border border-white/30 hover:border-white/60 text-white font-sans text-xs md:text-sm tracking-[0.3em] uppercase transition-all duration-300 backdrop-blur-sm"
+          >
+            Begin the Quiz
+          </motion.button>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2 }}
+            className="mt-8 text-xs text-stone-500 italic font-serif"
+          >
+            Good luck. You'll need it.
+          </motion.p>
+        </motion.div>
+      </div>
+    );
+  }
+
+  // After starting trivia - Show trivia questions
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white overflow-hidden px-6">
       {/* Vogue-style animated background */}
@@ -308,18 +354,6 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
             />
           ))}
         </div>
-
-        {/* Dev Skip Button - Remove this before production! */}
-        {showDevSkip && (
-          <motion.button
-            onClick={handleDevSkip}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-8 px-6 py-2 bg-yellow-500/20 border border-yellow-500/50 text-yellow-400 text-xs uppercase tracking-widest hover:bg-yellow-500/30 transition-all"
-          >
-            🚀 Dev Skip (Remove Before Launch)
-          </motion.button>
-        )}
       </motion.div>
     </div>
   );
