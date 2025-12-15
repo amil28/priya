@@ -206,6 +206,17 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
               </div>
             </div>
           </motion.div>
+
+          {/* Dev Skip Button - REMOVE BEFORE LAUNCH */}
+          <motion.button
+            onClick={() => setIsUnlocked(true)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+            className="mt-8 px-4 py-2 text-[10px] text-yellow-500 border border-yellow-500/30 hover:border-yellow-500/60 tracking-widest uppercase transition-all"
+          >
+            Skip Countdown (Dev Only)
+          </motion.button>
         </motion.div>
       </div>
     );
@@ -269,6 +280,17 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
           >
             Good luck. You'll need it.
           </motion.p>
+
+          {/* Dev Skip Button - REMOVE BEFORE LAUNCH */}
+          <motion.button
+            onClick={onUnlock}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.5 }}
+            className="mt-6 px-4 py-2 text-[10px] text-yellow-500 border border-yellow-500/30 hover:border-yellow-500/60 tracking-widest uppercase transition-all"
+          >
+            Skip Quiz (Dev Only)
+          </motion.button>
         </motion.div>
       </div>
     );
