@@ -62,13 +62,88 @@ export const COUPON_REWARD: Coupon = {
 export const TESTIMONIALS: Testimonial[] = [
   { 
     id: '1', 
+    name: 'Abhijay', 
+    message: 'I have been asked to do this briefly, which is funny because nothing about you is \'brief\', you are larger than life. quite simply, you are the reason I made it through this year with a smile. From checking in on me to simply being there, thank you for being my constant.\n\nThank you for being one of the people responsible for making the best memories this year. You have this beautiful ability to make people feel seen and valued, caring for them when no one even asked. Thank you for telling me things I don\'t even know about myself, for your stupid jokes that I secretly love, and for those elaborate questions only you could come up with.\n\nI am so proud of you for chasing your dreams and achieving exactly what you set out to do. All of this brilliance, and yet, somehow, you can\'t sing hehe.\n\nStay exactly as you are. Hope to be by your side as your friend forever because can\'t imagine life without it.\n\nHAPPY 22nd!\n\nLove, Abhijay' 
+  },
+  { 
+    id: '2', 
+    name: 'Milind', 
+    message: 'Happy birthday Priya!! The first time we met was at social, it seems so fitting in hindsight as you are the most social, amicable and cheerful person I have met! You\'re so easy and fun to talk to and always know what the other person is thinking making you not only an awesometastic friend but a great person to ask for advice or just share about your life with. I see you as a bundle of joy and energy, always ready to go on an adventure with a very pretty smile. I miss constantly laughing over stupid stuff whenever we get together so keep smiling for me😁' 
+  },
+  { 
+    id: '3', 
+    name: 'Aanya', 
+    message: 'happy birthday to my, a decade long best friend. happy & hard to believe how I\'ve kept you close to me for this long 😋\n\nthat counts your annoying self, your matcha addiction phase, your masti sooj rahi hai phase, your need to change your hair colour phase and everything in between and all this is because you\'re full of life.\n\nthank you for always sticking around with me, for being my constant in a world that keeps changing.\n\nseeing you grow gives me immense pride to call you my best friend. I love you more than words can ever explain, so I\'ll stop here 🤍' 
+  },
+  { 
+    id: '4', 
     name: 'Pranet', 
     message: 'Happy Birthday to my forest fire, the one who can also extinguish the fires in my life.\n\nTo the person I\'m most proud of, out there living the dream, always remember how inspiring you are to me.\n\nThank you for always being there, no matter the distance, no matter the time. I truly hope the very best finds you at every step of your journey.\n\nThis year, honestly… Delhi doesn\'t feel like Delhi without you. Waiting for you to come back already.\n\nMissing our gedis, our nightstays, our gossip seshs, and just everything that makes life feel lighter with you around.\n\nnever forget you\'re deeply loved, endlessly missed, and always my safest place.\n\nMay this year bring you more growth, more happiness, and everything your beautiful soul deserves.\n\nAlways cheering for you, always here. 💫' 
   },
   { 
-    id: '2', 
-    name: 'Aanya', 
-    message: 'happy birthday to my, a decade long best friend. happy & hard to believe how I\'ve kept you close to me for this long 😋\n\nthat counts your annoying self, your matcha addiction phase, your masti sooj rahi hai phase, your need to change your hair colour phase and everything in between and all this is because you\'re full of life.\n\nthank you for always sticking around with me, for being my constant in a world that keeps changing.\n\nseeing you grow gives me immense pride to call you my best friend. I love you more than words can ever explain, so I\'ll stop here 🤍' 
+    id: '5', 
+    name: 'Charvi', 
+    message: 'it\'s hard to put into words what you mean to me but very easy to say I wouldn\'t want to do life with anyone else\n\nForever the Rachel to my Monica 🥹\n\nhappiest birthday Pri\n\nLove you always (even on your annoying days) 💗' 
+  },
+  { 
+    id: '6', 
+    name: 'Siya and Madhav', 
+    message: 'Happy Birthday, priyaaa 🫶\n\nWe are genuinely so proud of the person you\'ve become. We\'ve seen everything, every phase, every version, every high and low, and watching you grow into who you are today has been so so so special.\n\nWe\'ve literally been there through all of it, the silly days, the emotional ones, the chaotic phases, everything. Growing up with you is something we\'ll always be grateful for. You truly are the best girl ❤️\n\nFrom being our cupid to finding your own love at a random party with us (still can\'t get over that 😭), our friendship has come such a long way. We\'ve changed, life has changed, yet everything is still the same, same priya, same khachre jokes!!!! 🤣\n\nNo matter where life takes us, you can count on us. This friendship is going nowhere, only forward. Always proud of you, always on your side. Love you endlessly❤️❤️❤️❤️❤️❤️❤️\n\n~Siya and Madhav' 
+  },
+  { 
+    id: '7', 
+    name: 'Anushka', 
+    message: 'it usually takes me a long time to get close to people. i don\'t know how we managed it, but i\'m really glad we did. sometimes it even feels like i\'m dating you (thank god i\'m not).\n\nover the past four months, i\'ve learned so much, and a big part of that is because of you. thank you for making me more aware of how people might feel around me, for always being there without me having to ask, for sitting with me when i cry, for making me laugh, and for looking out for me when i forget to look out for myself.\n\nthank you for existing.\n\nyou\'re truly the best, and you deserve nothing but the best.\n\nlove you <33' 
+  },
+  { 
+    id: '8', 
+    name: 'Ishan', 
+    message: 'I couldn\'t ask for a better friend specially at this stage when i am constantly overwhelmed with so many things. I miss home a little less coz i have found such a familial bond with you. Thank you for always being there, bringing in life to this otherwise dead campus. I am always amazed by how fast we got so close and it never felt like oversharing talking about my life with you and that tells how much of a good friend you are. Friends mean a lot to me and to have a friend like you is a blessing. Love you and wish you a happy birthday Priya. Looking forward to many more \'ye mera sapna hai\' waali demands.💗💗' 
+  },
+  { 
+    id: '9', 
+    name: 'Rythm', 
+    message: 'You\'ve been the light in this college\'s darkness, your energy, positivity, and determination keeping everything alive! ✨ The bond of friendship we\'ve developed over a few months is so positively reinforcing, filled with purity and innocence. 💖 Happy Birthday to my first IIM Mumbai friend and to a future strongest everlasting friendship! 🎂🥳' 
+  },
+  { 
+    id: '10', 
+    name: 'Anusha', 
+    message: 'Happiest Birthday, Priyaaaa! 🥰✨\n\nTo one of my biggest college survival kits — truly, I don\'t know how I would\'ve made it through without you.\n\nYou have no idea how much you\'ve meant to me — not just as a friend, but even more as a roommate who turned a random room into home. From late-night talks to "uth ja priyaa" in the morning, has become a default setting.\n\nHonestly, even a single day without you in the room feels incomplete and oddly quiet.\n\nHere\'s to many more memories, laughter, and "we\'ll laugh about this later" moments together. 💫\n\nHave the most amazing birthday — you deserve all the love today and always! 💕🎂' 
+  },
+  { 
+    id: '11', 
+    name: 'Divyang', 
+    message: 'Funny how one year can turn chance into comfort and moments into forever memories.\n\nThis year came with unexpected friendships, long talks, and a delhi-ness that feels rare.\n\nTo the person who helped me be better emotionally everyday, Here\'s to a birthday that marks the start of many new chapters for you ✨🎂' 
+  },
+  { 
+    id: '12', 
+    name: 'Shivam', 
+    message: 'Happy birthday Priya 🥳\n\nYou are genuinely one of the nicest people I\'ve met in my life. You don\'t just spread positivity wherever you go, you create the vibe with those mini little games, random fun moments, and your energy literally hold the group together. Honestly, when you\'re not around, it\'s so obvious what (and who) the group is missing. You are truly the masti of the weekend masti group ❤️\n\nWishing you a year full of happiness, laughter, and success. Stay exactly the same fun, warm, and impossible to replace 🎉✨' 
+  },
+  { 
+    id: '13', 
+    name: 'Srishti', 
+    message: 'Priya, you\'re truly little bundle of sunshine and energy ✨\n\nYou made me feel safe sharing parts of my life I never thought I would, opening up doesn\'t come easy to me, yet you always tried to lift me up when I needed it.\n\nThank you for making me feel included, even when I tend to stay in my own space, that means a lot.\n\nHappy Birthday, Priya 💖\n\nHope life treats you as kindly as you treat everyone around you\n\nlove you!' 
+  },
+  { 
+    id: '14', 
+    name: 'Nikunj', 
+    message: 'Thank you for putting in so much effort to make me feel comfortable enough to open up and find such an amazing friend in you. You truly sit on a very high pedestal in my friend circle, and I feel incredibly grateful and lucky to have met you. Happy Birthday!\n\nPS- Love answering your questions.' 
+  },
+  { 
+    id: '15', 
+    name: 'Sagar', 
+    message: 'You were my very first friend in college, and you really made me feel comfortable and open about things just by being you. You\'re genuinely one of the sweetest, most caring souls I know. And honestly, annoying you is still one of my favourite things. Happy birthday to the masti of the campus!' 
+  },
+  { 
+    id: '16', 
+    name: 'Prayag', 
+    message: 'You are the biggest reason my first 6 months on campus were not completely dull & lifeless. Priya, your caring nature and instinct of always looking out for others are your greatest qualities, second to none - never ever lose them.\n\nP.S. - Thank you for Apple ❤️' 
+  },
+  { 
+    id: '17', 
+    name: 'Aryan', 
+    message: 'Priyaaa u r the most genwin and smartest person I met in my life , talking to u is so easy and fun, everyone must have a friend like u, at last a very very happy birthday to you and enjoy ur life to the fullest' 
   },
 ];
 
