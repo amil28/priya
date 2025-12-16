@@ -61,6 +61,11 @@ export const COUPON_REWARD: Coupon = {
 
 export const TESTIMONIALS: Testimonial[] = [
   { 
+    id: '0', 
+    name: 'Aadu, Aarav and Nonz', 
+    message: 'Motts, you are one of the best gifts given by our parents to me. (Aarav is being chep here and saying us) :P.\n\nWe may not speak everyday but know that there is unconditional support, reliance, love and comfort from both sides and whenever any of us needs, the other person will be there, standing tall.\n\nThis is non-GPT content so, we\'ve actually put in thought to this.\n\nTo world\'s best Masi,\n\nLove you loads\n\nFrom Adu\nAarav and Nonz' 
+  },
+  { 
     id: '1', 
     name: 'Abhijay', 
     message: 'I have been asked to do this briefly, which is funny because nothing about you is \'brief\', you are larger than life. quite simply, you are the reason I made it through this year with a smile. From checking in on me to simply being there, thank you for being my constant.\n\nThank you for being one of the people responsible for making the best memories this year. You have this beautiful ability to make people feel seen and valued, caring for them when no one even asked. Thank you for telling me things I don\'t even know about myself, for your stupid jokes that I secretly love, and for those elaborate questions only you could come up with.\n\nI am so proud of you for chasing your dreams and achieving exactly what you set out to do. All of this brilliance, and yet, somehow, you can\'t sing hehe.\n\nStay exactly as you are. Hope to be by your side as your friend forever because can\'t imagine life without it.\n\nHAPPY 22nd!\n\nLove, Abhijay' 
