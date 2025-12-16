@@ -91,7 +91,6 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [error, setError] = useState(false);
-  const [showResultImage, setShowResultImage] = useState<'correct' | 'wrong' | null>(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   // Function to play buzzer sound for wrong answer
@@ -116,8 +115,8 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
   };
 
   useEffect(() => {
-    // Target Date: Dec 17, 2025
-    const target = new Date('2025-12-17T00:00:00');
+    // Target Date: 60 seconds from now (for testing)
+    const target = new Date(Date.now() + 60 * 1000);
     
     const timer = setInterval(() => {
       const now = new Date();
@@ -143,10 +142,8 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
     setSelectedAnswer(answerIndex);
     
     if (answerIndex === TRIVIA_QUESTIONS[currentQuestion].correctAnswer) {
-      // Correct answer - show correct image
-      setShowResultImage('correct');
+      // Correct answer
       setTimeout(() => {
-        setShowResultImage(null);
         if (currentQuestion < TRIVIA_QUESTIONS.length - 1) {
           setCurrentQuestion(currentQuestion + 1);
           setSelectedAnswer(null);
@@ -154,17 +151,15 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
           // All questions answered correctly
           onUnlock();
         }
-      }, 1500);
+      }, 800);
     } else {
-      // Wrong answer - play buzzer and show wrong image
+      // Wrong answer - play buzzer sound
       playBuzzerSound();
       setError(true);
-      setShowResultImage('wrong');
       setTimeout(() => {
         setError(false);
-        setShowResultImage(null);
         setSelectedAnswer(null);
-      }, 1500);
+      }, 1000);
     }
   };
 
@@ -382,28 +377,6 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
           ))}
         </div>
       </motion.div>
-
-      {/* Result Image Overlay */}
-      <AnimatePresence>
-        {showResultImage && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm"
-          >
-            <motion.img
-              src={showResultImage === 'correct' ? '/correct.jpg' : '/wrong.jpg'}
-              alt={showResultImage === 'correct' ? 'Correct!' : 'Wrong!'}
-              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
