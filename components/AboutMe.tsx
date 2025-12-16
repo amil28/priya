@@ -95,7 +95,7 @@ const AboutMe: React.FC = () => {
             </div>
             <div className="flex items-center justify-between text-sm">
               <p className="text-stone-600">Student: <span className="font-medium">Priyamvada Rajpal</span></p>
-              <p className="text-stone-600">Year: <span className="font-medium">2024</span></p>
+              <p className="text-stone-600">Year: <span className="font-medium">2025</span></p>
             </div>
           </div>
 

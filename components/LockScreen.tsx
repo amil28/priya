@@ -35,8 +35,8 @@ const TRIVIA_QUESTIONS: TriviaQuestion[] = [
   },
   {
     question: "The Catchphrase: Which one of these sentences does Priya say the most?",
-    options: ["Mera ek dilemma hai", "Challo kuch intelligent baatein karte hai", "Pata hai kya hua", "True true"],
-    correctAnswer: 2
+    options: ["Mera ek dilemma hai", "Challo kuch intelligent baatein karte hai", "Pata hai kya hua", "True true", "All of the above"],
+    correctAnswer: 4
   },
   {
     question: "Heights & Harmonies: She was scared at the top of the Ferris Wheel at the Mela. What song did we sing to distract her?",
@@ -91,7 +91,29 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [error, setError] = useState(false);
+  const [showResultImage, setShowResultImage] = useState<'correct' | 'wrong' | null>(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  // Function to play buzzer sound for wrong answer
+  const playBuzzerSound = () => {
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    // Create a harsh buzzer sound
+    oscillator.type = 'sawtooth';
+    oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+    oscillator.frequency.setValueAtTime(100, audioContext.currentTime + 0.1);
+    
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+    
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.3);
+  };
 
   useEffect(() => {
     // Target Date: Dec 17, 2025
@@ -121,8 +143,10 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
     setSelectedAnswer(answerIndex);
     
     if (answerIndex === TRIVIA_QUESTIONS[currentQuestion].correctAnswer) {
-      // Correct answer
+      // Correct answer - show correct image
+      setShowResultImage('correct');
       setTimeout(() => {
+        setShowResultImage(null);
         if (currentQuestion < TRIVIA_QUESTIONS.length - 1) {
           setCurrentQuestion(currentQuestion + 1);
           setSelectedAnswer(null);
@@ -130,14 +154,17 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
           // All questions answered correctly
           onUnlock();
         }
-      }, 800);
+      }, 1500);
     } else {
-      // Wrong answer
+      // Wrong answer - play buzzer and show wrong image
+      playBuzzerSound();
       setError(true);
+      setShowResultImage('wrong');
       setTimeout(() => {
         setError(false);
+        setShowResultImage(null);
         setSelectedAnswer(null);
-      }, 1000);
+      }, 1500);
     }
   };
 
@@ -206,17 +233,6 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
               </div>
             </div>
           </motion.div>
-
-          {/* Dev Skip Button - REMOVE BEFORE LAUNCH */}
-          <motion.button
-            onClick={() => setIsUnlocked(true)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="mt-8 px-4 py-2 text-[10px] text-yellow-500 border border-yellow-500/30 hover:border-yellow-500/60 tracking-widest uppercase transition-all"
-          >
-            Skip Countdown (Dev Only)
-          </motion.button>
         </motion.div>
       </div>
     );
@@ -280,17 +296,6 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
           >
             Good luck. You'll need it.
           </motion.p>
-
-          {/* Dev Skip Button - REMOVE BEFORE LAUNCH */}
-          <motion.button
-            onClick={onUnlock}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.5 }}
-            className="mt-6 px-4 py-2 text-[10px] text-yellow-500 border border-yellow-500/30 hover:border-yellow-500/60 tracking-widest uppercase transition-all"
-          >
-            Skip Quiz (Dev Only)
-          </motion.button>
         </motion.div>
       </div>
     );
@@ -377,6 +382,28 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
           ))}
         </div>
       </motion.div>
+
+      {/* Result Image Overlay */}
+      <AnimatePresence>
+        {showResultImage && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          >
+            <motion.img
+              src={showResultImage === 'correct' ? '/correct.jpg' : '/wrong.jpg'}
+              alt={showResultImage === 'correct' ? 'Correct!' : 'Wrong!'}
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
