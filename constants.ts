@@ -92,58 +92,73 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   { 
     id: '7', 
+    name: 'Radhikka', 
+    message: 'happy birthday priii! forever grateful for you and your friendship. you have the biggest heart with so much love for everyone, i hope you achieve the biggest things in life which i know you will. you\'re literally family, my husband. can\'t wait to do life with you always. see you sooon north delhi isn\'t north delhing without you, i love you max always.' 
+  },
+  { 
+    id: '8', 
     name: 'Anushka', 
     message: 'it usually takes me a long time to get close to people. i don\'t know how we managed it, but i\'m really glad we did. sometimes it even feels like i\'m dating you (thank god i\'m not).\n\nover the past four months, i\'ve learned so much, and a big part of that is because of you. thank you for making me more aware of how people might feel around me, for always being there without me having to ask, for sitting with me when i cry, for making me laugh, and for looking out for me when i forget to look out for myself.\n\nthank you for existing.\n\nyou\'re truly the best, and you deserve nothing but the best.\n\nlove you <33' 
   },
   { 
-    id: '8', 
+    id: '9', 
     name: 'Ishan', 
     message: 'I couldn\'t ask for a better friend specially at this stage when i am constantly overwhelmed with so many things. I miss home a little less coz i have found such a familial bond with you. Thank you for always being there, bringing in life to this otherwise dead campus. I am always amazed by how fast we got so close and it never felt like oversharing talking about my life with you and that tells how much of a good friend you are. Friends mean a lot to me and to have a friend like you is a blessing. Love you and wish you a happy birthday Priya. Looking forward to many more \'ye mera sapna hai\' waali demands.💗💗' 
   },
   { 
-    id: '9', 
+    id: '10', 
     name: 'Rythm', 
     message: 'You\'ve been the light in this college\'s darkness, your energy, positivity, and determination keeping everything alive! ✨ The bond of friendship we\'ve developed over a few months is so positively reinforcing, filled with purity and innocence. 💖 Happy Birthday to my first IIM Mumbai friend and to a future strongest everlasting friendship! 🎂🥳' 
   },
   { 
-    id: '10', 
+    id: '11', 
     name: 'Anusha', 
     message: 'Happiest Birthday, Priyaaaa! 🥰✨\n\nTo one of my biggest college survival kits — truly, I don\'t know how I would\'ve made it through without you.\n\nYou have no idea how much you\'ve meant to me — not just as a friend, but even more as a roommate who turned a random room into home. From late-night talks to "uth ja priyaa" in the morning, has become a default setting.\n\nHonestly, even a single day without you in the room feels incomplete and oddly quiet.\n\nHere\'s to many more memories, laughter, and "we\'ll laugh about this later" moments together. 💫\n\nHave the most amazing birthday — you deserve all the love today and always! 💕🎂' 
   },
   { 
-    id: '11', 
+    id: '12', 
     name: 'Divyang', 
     message: 'Funny how one year can turn chance into comfort and moments into forever memories.\n\nThis year came with unexpected friendships, long talks, and a delhi-ness that feels rare.\n\nTo the person who helped me be better emotionally everyday, Here\'s to a birthday that marks the start of many new chapters for you ✨🎂' 
   },
   { 
-    id: '12', 
+    id: '13', 
     name: 'Shivam', 
     message: 'Happy birthday Priya 🥳\n\nYou are genuinely one of the nicest people I\'ve met in my life. You don\'t just spread positivity wherever you go, you create the vibe with those mini little games, random fun moments, and your energy literally hold the group together. Honestly, when you\'re not around, it\'s so obvious what (and who) the group is missing. You are truly the masti of the weekend masti group ❤️\n\nWishing you a year full of happiness, laughter, and success. Stay exactly the same fun, warm, and impossible to replace 🎉✨' 
   },
   { 
-    id: '13', 
+    id: '14', 
     name: 'Srishti', 
     message: 'Priya, you\'re truly little bundle of sunshine and energy ✨\n\nYou made me feel safe sharing parts of my life I never thought I would, opening up doesn\'t come easy to me, yet you always tried to lift me up when I needed it.\n\nThank you for making me feel included, even when I tend to stay in my own space, that means a lot.\n\nHappy Birthday, Priya 💖\n\nHope life treats you as kindly as you treat everyone around you\n\nlove you!' 
   },
   { 
-    id: '14', 
+    id: '15', 
     name: 'Nikunj', 
     message: 'Thank you for putting in so much effort to make me feel comfortable enough to open up and find such an amazing friend in you. You truly sit on a very high pedestal in my friend circle, and I feel incredibly grateful and lucky to have met you. Happy Birthday!\n\nPS- Love answering your questions.' 
   },
   { 
-    id: '15', 
+    id: '16', 
     name: 'Sagar', 
     message: 'You were my very first friend in college, and you really made me feel comfortable and open about things just by being you. You\'re genuinely one of the sweetest, most caring souls I know. And honestly, annoying you is still one of my favourite things. Happy birthday to the masti of the campus!' 
   },
   { 
-    id: '16', 
+    id: '17', 
     name: 'Prayag', 
     message: 'You are the biggest reason my first 6 months on campus were not completely dull & lifeless. Priya, your caring nature and instinct of always looking out for others are your greatest qualities, second to none - never ever lose them.\n\nP.S. - Thank you for Apple ❤️' 
   },
   { 
-    id: '17', 
+    id: '18', 
     name: 'Aryan', 
     message: 'Priyaaa u r the most genwin and smartest person I met in my life , talking to u is so easy and fun, everyone must have a friend like u, at last a very very happy birthday to you and enjoy ur life to the fullest' 
+  },
+  { 
+    id: '19', 
+    name: 'Ajay', 
+    message: 'Hi Priya. You know how there\'s always one person you can always rely on and know they\'ve got ur back, you\'re that person for me in Mumbai. Thanks for always being there.\n\nMuch love gng\n\nPanch Mahal' 
+  },
+  { 
+    id: '20', 
+    name: 'Parin', 
+    message: 'Sabse Happiest Birthday to you Priya. From the moment we met at IIM Mumbai, you felt like family in a place that was so unforgiving and unfamiliar. Somehow, your energy, so infectious and magnetic, pushed me closer to everyone, too. Your warmth, immense care, and quiet strength make everything around you feel lighter and brighter. I\'m so grateful for you, and I\'ll always hold you close — in the loud days and the quiet ones. I finally understand what my mom meant by "forever friends". Love you cutie, with the I and my whole 💗' 
   },
 ];
 
