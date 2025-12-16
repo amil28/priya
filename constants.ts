@@ -61,6 +61,11 @@ export const COUPON_REWARD: Coupon = {
 
 export const TESTIMONIALS: Testimonial[] = [
   { 
+    id: '00', 
+    name: 'Mumma Pappa', 
+    message: '🎂💖 जन्मदिन की ढेर सारी शुभकामनाएँ प्यारी बेटी 💖🎂\n\nDear priya,\n\nतुम हमारे जीवन की सुंदर खुशी हो।\n\nतुम्हारी मुस्कान से हमारा घर रोशन रहता है।\n\nहम ईश्वर से यही प्रार्थना करते हैं कि\n\nतुम्हारा हर सपना पूरा हो,\n\nतुम हमेशा स्वस्थ, खुश और सफल रहो।\n\nहमेशा यूँ ही आगे बढ़ती रहो,\n\nमम्मी-पापा का प्यार और आशीर्वाद\n\nहमेशा तुम्हारे साथ है।\n\nजन्मदिन मुबारक हो बेटा! 🎉' 
+  },
+  { 
     id: '0', 
     name: 'Aadu, Aarav and Nonz', 
     message: 'Motts, you are one of the best gifts given by our parents to me. (Aarav is being chep here and saying us) :P.\n\nWe may not speak everyday but know that there is unconditional support, reliance, love and comfort from both sides and whenever any of us needs, the other person will be there, standing tall.\n\nThis is non-GPT content so, we\'ve actually put in thought to this.\n\nTo world\'s best Masi,\n\nLove you loads\n\nFrom Adu\nAarav and Nonz' 
