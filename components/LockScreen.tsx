@@ -115,8 +115,8 @@ const LockScreen: React.FC<LockScreenProps> = ({ onUnlock }) => {
   };
 
   useEffect(() => {
-    // Target Date: 60 seconds from now (for testing)
-    const target = new Date(Date.now() + 60 * 1000);
+    // Target Date: Dec 17, 2025
+    const target = new Date('2025-12-17T00:00:00');
     
     const timer = setInterval(() => {
       const now = new Date();
